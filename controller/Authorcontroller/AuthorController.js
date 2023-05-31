@@ -5,11 +5,11 @@ const createAuthor=async (req,res)=>{
 
      try { const data=req.body;
           const{fname,lname,title,email ,password }=data
-          if(!fname) return res.status(404).send("fname not found")
-          if(!lname) return res.status(404).send("lname not found")
-          if(!title) return res.status(404).send("title not found")
-          if(!email) return res.status(404).send("email not found")
-          if(!password) return res.status(404).send("password not found")
+          if(!fname) return res.status(400).send("fname not found")
+          if(!lname) return res.status(400).send("lname not found")
+          if(!title) return res.status(400).send("title not found")
+          if(!email) return res.status(400).send("email not found")
+          if(!password) return res.status(400).send("password not found")
 
           if(!fname.match(/^([(A-Z)(a-z)]+$)/i)){
                return res.status(400).send("please enter valid fname")
